@@ -1,0 +1,13 @@
+package com.example.demo.model;
+
+import java.util.Set;
+
+public class Author {
+	
+	private String firstName;
+	private String lastName;
+	
+	private Set<Books> books=new HashSet<>();
+	
+
+}

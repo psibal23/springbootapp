@@ -1,0 +1,30 @@
+package com.example.demo.bootstrap;
+
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+
+import com.example.demo.model.Author;
+import com.example.demo.model.Books;
+
+public class BootStrap implements ApplicationListener<ContextRefreshedEvent>{
+
+	@Override
+	public void onApplicationEvent(ContextRefreshedEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private void initData() {
+		Author eric = new Author("Eric","Evans");
+		Books book1 = new Books("DDD","23432","Bloomsburry");
+		eric.getBooks().add(book1);
+		book1.getAuthors().add(eric);
+		
+		Author jk = new Author("J K","Rowling");
+		Books book2 = new Books("Harry Potter","134432","Bloomsburry");
+		eric.getBooks().add(book2);
+		book1.getAuthors().add(jk);
+		
+	}
+
+}

@@ -1,0 +1,73 @@
+package com.example.demo.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Author {
+	
+	@Id
+	@GeneratedValue(strategy =GenerationType.AUTO)
+	private Long authorId;
+	public Long getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(Long authorId) {
+		this.authorId = authorId;
+	}
+
+	private String firstName;
+	private String lastName;
+	
+	private Set<Books> books=new HashSet<>();
+	
+	public Author() {
+		
+	}
+
+	public Author(String firstName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public Author(String firstName, String lastName, Set<Books> books) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.books = books;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Set<Books> getBooks() {
+		return books;
+	}
+
+	public void setBooks(Set<Books> books) {
+		this.books = books;
+	}
+	
+	
+
+}

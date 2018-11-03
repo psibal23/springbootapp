@@ -1,0 +1,14 @@
+package com.example.demo.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Books {
+	
+	private String title;
+	private String isbn;
+	private String publisher;
+	
+	private Set<Author> authors = new HashSet<>();
+
+}
